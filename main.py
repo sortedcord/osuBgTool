@@ -163,7 +163,7 @@ if __name__ == '__main__':
                     os.replace(os.path.join(song_location,jpg_image_name),os.path.join(song_location, old_image_name))
             
                 debug('s',f'Replaced background for {song}')
-                time.sleep(0.1)
+                
                 
                 # debug('e',f'Could not replace background for {song}. Moving on to the next map')
                 # time.sleep(0.1)
