@@ -25,27 +25,27 @@ if __name__ == '__main__':
         debug('e', 'OpenCV not found, trying to install it automatically')
         try:
             os.system("pip install opencv-python")
-            # time.sleep(2)
+            time.sleep(2)
         except:
             debug('e','Could not install OpenCV. Try doing so manually.')
             exit()
         debug('s', 'OpenCV installed successfully. Try running the script again.')
-        # time.sleep(1)
+        time.sleep(1)
         exit()
 
     # Get osu installation directory
     while True:
-        # time.sleep(1)
+        time.sleep(1)
         nl()
         debug('i',"Enter OSU Installation Path (DO NOT USE BACKSLASH). For example: 'C:/User/OSU/'")
-        # root_dir = input((">>> "))
-        root_dir ='C:/Root/'
+        root_dir = input((">>> "))
+        # root_dir ='C:/Root/'
 
         # Format the path
         if root_dir[-1] != '/':
             root_dir+= "/"
 
-        # time.sleep(1.5)
+        time.sleep(1.5)
         nl()
         if os.path.isdir(root_dir):
             debug('s','Installation directory found')
@@ -53,14 +53,14 @@ if __name__ == '__main__':
             debug('e','Installation directory not found. Please try again.')
             continue
 
-        # time.sleep(1.5)
+        time.sleep(1.5)
         # Check if this is THE osu directory or not.
         if os.path.isfile(root_dir+'osu!.exe'):
             debug('s','Osu executable found.')
         else:
             debug('w','Osu executable cannot be found in this directory. Be VERY SURE THAT THIS IS THE CORRECT DIRECTORY')  
 
-        # time.sleep(1.5)
+        time.sleep(1.5)
         # Search for the songs folder
         songs_path = root_dir+'Songs/'
         if os.path.isdir(songs_path):
@@ -69,7 +69,7 @@ if __name__ == '__main__':
         else:
             debug('e','Could not find the songs folder, enter the directory properly')
             continue
-    # time.sleep(1.5)
+    time.sleep(1.5)
     beatmap_count = len(os.listdir(songs_path))
     if beatmap_count == 0:
         debug('e','No beatmaps were found. Exiting')
@@ -81,35 +81,35 @@ if __name__ == '__main__':
     debug('i','Since mappers use both JPGs as well as PNGs for their backgrounds, both of the image types will be required. Make sure both have the same file names')
     
 
-    # time.sleep(1.5)
+    time.sleep(1.5)
     nl()
     while True:
         print("Enter the path of the PNG Image (For example: C:/Users/John/Pictures/wally.png)")
-        # png_path = input(">>> ")
-        png_path = 'C:/Root/wall.png' 
+        png_path = input(">>> ")
+        # png_path = 'C:/Root/wall.png' 
         nl()
-        # time.sleep(1.5)
+        time.sleep(1.5)
         if os.path.isfile(png_path):
             print("[SUCESS]     Image Found.")
             break
         else:
             print("[SUCESS]     Image Not Found.")
     
-    # time.sleep(1.5)
+    time.sleep(1.5)
     nl()
     while True:
         print("Enter the path of the jpg Image (For example: C:/Users/John/Pictures/wally.jpg)")
-        # jpg_path = input(">>> ") 
-        jpg_path = 'C:/Root/wall.jpg'
+        jpg_path = input(">>> ") 
+        # jpg_path = 'C:/Root/wall.jpg'
         nl()
-        # time.sleep(1.5)
+        time.sleep(1.5)
         if os.path.isfile(jpg_path):
             print("[SUCESS]     Image Found.")
             break
         else:
             print("[FAILURE]     Image Not Found.")
     
-    # time.sleep(1.5)
+    time.sleep(1.5)
     png_image_name = os.path.basename(png_path.replace('\\',os.sep))
     debug('i',f'PNG Image name set as {png_image_name}')
     time.sleep(0.7)
